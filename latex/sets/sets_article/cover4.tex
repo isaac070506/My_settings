@@ -1,0 +1,72 @@
+\begin{titlepage}
+
+  \thispagestyle{empty}
+  \newgeometry{left=0cm,right=0cm,top=2cm,bottom=1.5cm}
+
+  % - - - - - - - - - - - - - - - Imagenes - - - - - - - - - - - - - 
+
+  \begin{textblock}{13}
+    (2.5,2.5)
+    \includegraphics[width=12.5cm]{escudo_uaq_ing.pdf}
+  \end{textblock}
+
+  % - - - - - - - - - - - Lado izquierdo - - - - - - - - - - - 
+
+  \begin{tikzpicture}[overlay]
+
+    \fill[azuldk] (0,-9.5) -- (20.5,-27.5) -- (0,-27.5) -- cycle;
+
+    \fill[rojo] (0,-4) -- (0,-7.5) -- (6.5,-11) -- (6.5,-7.5) -- cycle;
+
+    \fill[rojodk] (6.5,-11) -- (3.5,-13.5) -- (3.5,-10.9) -- (4.63,-9.99)
+      -- cycle;
+
+    \fill[rojo] (0,-8) -- (3.5,-10) -- (3.5,-13.5) -- (0,-11.5) -- cycle;
+
+    \fill[rojodk] (3.5,-13.5) -- (0,-15.8) -- (0,-13) -- (0.88,-12) -- cycle;
+
+    \shade[ top color=rojo, bottom color=rojo!1!azuldk, shading angle=45 ]
+      (0,-15.8) -- (11,-25) -- (14,-23) -- (3,-13.82) -- cycle;
+
+    \shade[ top color=rojodk, bottom color=rojo!1!azuldk, shading angle=45 ]
+      (0,-20) -- (6,-25) -- (8,-24) -- (0,-17) -- cycle;
+
+    \fill[rojo] (0,-18) -- (2,-20) -- (2,-22.5) -- (0,-20.5) -- cycle;
+
+    \fill[rojodk] (1,-21.5) -- (2,-22.5) -- (0,-23.5) -- (0,-22) -- cycle;
+
+    \fill[rojodk] (0,-23.5) -- (0,-25) -- (1,-26) -- cycle;
+
+    % - - - - - - - - - - Lado derecho - - - - - - - - - - - - 
+
+    \fill[rojo] (19,1) -- (19,-1.5) -- (22,-3.5) -- (22,-1) -- cycle;
+
+    \fill[azuldk] (16,3) -- (22,3) -- (22,-1) -- cycle;
+
+  \end{tikzpicture}
+
+  % - - - - - - - - - - - - - - Datos - - - - - - - - - - - - - 
+
+  % badness off
+  \begin{textblock}{8}(11.5,9)
+    \begin{flushright}
+      \textbf{\fontsize{39.5pt}{1.5}\selectfont \titulo} 
+      \\[0.5cm]
+      \textbf{\fontsize{20pt}{1.5}\selectfont \subtitulo}
+      \\[0.5cm]
+      \textbf{\fontsize{20pt}{1.5}\selectfont \materia}
+    \end{flushright}
+    \begin{tikzpicture}[overlay]
+      \draw[black, ultra thick] (8,0.3) -- +(-\len,0);
+    \end{tikzpicture}
+    \begin{flushright}
+      \textbf{\fontsize{18pt}{1.5}\selectfont Autor(es):} 
+      \\[0.5cm]
+      \textbf{\fontsize{15}{1.5}\selectfont \autor} 
+      \\[5cm]
+      \textbf{\fontsize{15}{1.5}\selectfont \fecha}
+    \end{flushright}
+  \end{textblock}
+  % badness on
+
+\end{titlepage}

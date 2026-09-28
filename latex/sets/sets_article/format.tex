@@ -1,0 +1,53 @@
+% ---=== Links ===---
+
+\hypersetup{
+  pdfnewwindow=true,
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=cyan
+}
+
+\setlength{\TPHorizModule}{1cm} % Establecer unidad horizontal
+\setlength{\TPVertModule}{1cm}  % Establecer unidad vertical
+
+% ---=== Formato de páginas ===---
+
+% \geometry{
+%   letterpaper,
+%   top=1.5in,
+%   bottom=1in,
+%   left=1in,
+%   right=1in,
+%   headheight=1in,
+%   headsep=8mm,
+%   footskip=12mm
+% }
+
+% ---=== Para páginas regulares ===---
+% -- Encabezado --
+
+\pagestyle{fancy}
+
+\fancyhf{}
+
+\fancyhead[L]{\textbf{\titulo \\[0.5mm]
+  \subtitulo}{\vspace{2mm}}
+}
+\fancyhead[R]{\vspace{-2mm} \includegraphics[width=4.0cm]{escudouaqing.pdf} \\
+  \hspace{2mm}}
+\renewcommand{\headrulewidth}{0.5pt}
+
+% -- Pie de página --
+
+\lfoot[\thepage]{}
+\rfoot[]{\thepage}
+\renewcommand{\footrulewidth}{0.5pt}
+
+% ---=== Colorbox ===---
+
+\newtcolorbox{mybox}[1][]{
+  colframe=gris, colback=white, coltitle=black, fonttitle=\bfseries, title=#1,
+  boxrule=0.5mm, width=\textwidth, arc=2mm, outer arc=2mm, boxsep=5mm, left=3mm,
+  right=3mm,
+}

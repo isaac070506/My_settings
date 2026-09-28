@@ -1,0 +1,66 @@
+% - - - - - - - - - - - - - - - -  Portada  - - - - - - - - - - - - - - - - - 
+
+\begin{titlepage}
+  \thispagestyle{empty}
+  \newgeometry{left=0cm,right=0cm,top=2cm,bottom=1.5cm}
+
+  \begin{tikzpicture}[overlay]
+
+    % - - - - - - - - - - - - - - Arriba izquierda - - - - - - - - - - - - - - - 
+
+    \draw[Grisaseo, fill=Grisaseo] (0.015,-10) rectangle +(2.5,15);
+    \draw[OscuroI, fill=OscuroI] (0.015,-6) rectangle +(2,6.5);
+    \draw[Palido, fill=Palido] (2,-7.2) rectangle +(3.5,10);
+    \draw[Claro,fill=Claro] (5.5,-6) rectangle +(3,7);
+
+    % - - - - - - - - - - - - - - Arriba derecha - - - - - - - - - - - - - - - - -
+
+    \draw[Palido, fill=Palido] (10,-0.5) rectangle +(9,3);
+    \draw[OscuroII, fill=OscuroII] (12,-2.5) rectangle +(6,3);
+    \draw[Grisaseo, fill=Grisaseo] (18,-6) rectangle +(3.6,9);
+
+    % - - - - - - - - - - - - - - Abajo izquierda - - - - - - - - - - - - - - - - 
+
+    \draw[Claro, fill=Claro] (0.015,-27.5) rectangle +(1.8,6);
+    \draw[Claro, fill=Claro] (0.015,-27.5) rectangle +(3,2);
+    \draw[OscuroII, fill=OscuroII] (0.015,-26.3) rectangle +(5.5,2);
+
+    % - - - - - - - - - - - - - - Abajo derecha - - - - - - - - - - - - - - - - - 
+
+    \draw[OscuroII, fill=OscuroII] (16,-27.5) rectangle +(5.6,15);
+    \draw[OscuroI, fill=OscuroI] (17,-27.5) rectangle +(2.5,8);
+    \draw[OscuroI, fill=OscuroI] (11.5,-27.5) rectangle +(2.5,5);
+    \draw[Palido, fill=Palido] (14,-27.5) rectangle +(3,11);
+
+  \end{tikzpicture}
+
+  \noindent
+  \hfill
+
+  % - - - - - - - - - - - - - - - - Escudos - - - - - - - - - - - - - - - - - - - - -
+
+  \begin{textblock}{15}
+    (3.5,10.5)
+    \centering
+
+    \begin{tabularx}{\textwidth}{c X c}
+      \includegraphics[width=2.5cm]{escudouaq.pdf} & \vspace{-3.0cm} \centering \textbf{\Large UNIVERSIDAD AUTÓNOMA DE QUERÉTARO} \\
+      FACULTAD DE INGENIERÍA                       & \includegraphics[width=2.5cm]{escudoingblack.pdf} \hspace{-1.0cm}
+    \end{tabularx}
+  \end{textblock}
+
+  % - - - - - - - - - - - - - - - - - Datos - - - - - - - - - - - - - - - - - - - - - -
+
+  \begin{textblock}{10}
+    (2.1,16.5)
+    \centering
+    \textbf{\fontsize{30pt}{1.5}\selectfont \titulo} \\[1cm]
+    \textbf{\fontsize{25pt}{1.5}\selectfont \subtitulo} \\[0.2cm]
+    \textbf{\fontsize{25pt}{1.5}\selectfont \materia} \\[1cm]
+    \textbf{\fontsize{20pt}{1.5}\selectfont Autor(es): \\[0.3cm]
+    \autor} \\[1cm]
+    \textbf{\fontsize{15pt}{1.5}\selectfont \fecha}
+
+  \end{textblock}
+
+\end{titlepage}

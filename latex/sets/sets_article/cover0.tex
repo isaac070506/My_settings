@@ -1,0 +1,81 @@
+% - - - - - - - - - - - - - - - -  Portada  - - - - - - - - - - - - - - - - - 
+
+\begin{titlepage}
+  \thispagestyle{empty}
+  \newgeometry{left=0cm,right=0cm,top=2cm,bottom=1.5cm}
+
+  % - - - - - - - - - - - - - Imagen superior - - - - - - - - - - - - - - - - -
+
+  % \begin{textblock}{15}(1.8,2.35)
+  %   \begin{figure}[H]
+  %     \includesvg[width=2.5cm]{escudouaq.svg}
+  %   \end{figure}
+  % \end{textblock}
+
+  % - - - - - - - - - - - - - - Lineas laterales - - - - - - - - - - - - - - -
+
+  \begin{tikzpicture}[overlay]
+
+    \draw[color=rojofi, fill=rojofi] (2.5,-4.2) rectangle +(0.08,-13.9);
+    \draw[color=OscuroII, fill=OscuroII] (3,-4.2) rectangle +(0.08,-13.9);
+    \draw[color=rojofi, fill=rojofi] (3.5,-4.2) rectangle +(0.08,-13.9);
+
+  \end{tikzpicture}
+
+  % - - - - - - - - - - - - - - - Imagen inferior - - - - - - - - - - - - - - - - 
+
+  % \begin{textblock}{15}(1.8,21.5)
+  %   \begin{figure}[H]
+  %     \includesvg[width=2.5cm]{escudoing.svg}
+  %   \end{figure}
+  % \end{textblock}
+
+  % - - - - - - - - - - - - - - - - Texto sobre la linea - - - - - - - - - - - - - -
+
+  \begin{textblock}{15}
+    (5,2.2)
+    \centering
+    \textbf{\fontsize{20pt}{1.5}\selectfont UNIVERSIDAD AUTÓNOMA \\[0.3cm]
+    DE QUERÉTARO}
+  \end{textblock}
+
+  % - - - - - - - - - - - - - - - - Linea superior - - - - - - - - - - - - - - - - 
+
+  \begin{tikzpicture}[overlay]
+
+    \draw[color=rojofi, fill=rojofi] (6,-1.5) rectangle +(13,0.08);
+
+  \end{tikzpicture}
+
+  % - - - - - - - - - - - - - - - -  Texto bajo la linea - - - - - - - - - - - - - - 
+
+  \begin{textblock}{15}
+    (5,5)
+    \centering
+    \textbf{\fontsize{15pt}{1.5}\selectfont FACULTAD DE INGENIERÍA}
+  \end{textblock}
+
+  % - - - - - - - - - - - - - - - - - Datos - - - - - - - - - - - - - - - - - 
+
+  % Titulo
+  \begin{textblock}{15}
+    (5,8)
+    \centering
+    \textbf{\fontsize{30pt}{1.5}\selectfont \materia} \\[3cm]
+    \textbf{\fontsize{25pt}{1.5}\selectfont \tipodearchivo:} \\[0.3cm]
+    \textbf{\fontsize{25pt}{1.5}\selectfont \tarea} \\[3cm]
+
+    % Autor(es)
+    \textbf{\fontsize{20pt}{1.5}\selectfont Autor:
+    \\[0.3cm]
+    \autor}
+  \end{textblock}
+
+  % Fecha
+  \begin{textblock}{15}
+    (10,24)
+    \centering
+    \textbf{\fontsize{15pt}{1.5}\selectfont \fecha}
+  \end{textblock}
+
+\end{titlepage}

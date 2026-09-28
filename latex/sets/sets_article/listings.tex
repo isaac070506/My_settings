@@ -1,0 +1,148 @@
+% Este apartado está dado por el Sr. Bladimir Barron, ante cualquier duda es mejor dirigirse a él directamente.
+
+% ======== Default Style ======== %
+
+\lstset{
+  inputencoding=utf8,
+  extendedchars=true,
+  basicstyle=\ttfamily\small,
+  numbers=left,
+  numberstyle=\tiny,
+  stepnumber=1,
+  numbersep=5pt,
+  showstringspaces=false,
+  frame=single,
+  breaklines=true,
+  tabsize=2,
+  columns=fixed,
+  keepspaces=true
+}
+
+% ======== Character Mapping ======== %
+\lstset{ literate= {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {ü}{{\"u}}1 {Ü}{{\"U}}1 {¿}{{\textquestiondown}}1 {¡}{{\textexclamdown}}1 }
+
+% ======== TColorBox for listings ======== %
+
+% Basic style for listings inside tcolorbox.
+% It can be overwritten in the definitions being used 
+\tcbset{ basicCodeStyle/.style={
+  breakable, enhanced, listing only, fonttitle=\bfseries, sharp corners,
+  boxrule=0.5pt, left=0mm, top=-1mm, bottom=2mm, overlay
+  first={
+    \node[anchor=south east, font=\itshape\small, text=black!85] at (frame.south
+    east) {(Continúa $\rightarrow$) \,};
+  },
+  overlay
+  middle={
+    \node[anchor=south east, font=\itshape\small, text=black!85] at (frame.south
+    east) {(Continúa $\rightarrow$) \,};
+  },
+  codetitle/.code={
+    \tcbset{
+      title={Código \thetcbcounter: ##1},
+      title after break={Código \thetcbcounter: ##1 (continuación)}
+    }
+  }
+} }
+
+% ================================= %
+% ======== Language Styles ======== %
+% ================================= %
+
+% ======== Python Style ======== %
+\lstdefinestyle{pythonstyle}{
+  language=Python, inputencoding=utf8, basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue}\bfseries, stringstyle=\color{teal},
+  commentstyle=\color{black!70}\itshape, numbers=left, numberstyle=\tiny,
+  frame=none, breaklines=true, tabsize=2, columns=fixed, keepspaces=true,
+}
+
+% ======== Insert Python ======== %
+\newtcbinputlisting[auto counter, number within=noseccion]{\pycode}[2][]{
+  basicCodeStyle, listing file={#2}, listing options={style=pythonstyle}, #1
+}
+
+% ======== Example of use 
+% \pycode[codetitle={python code}, label=lst:python_example]{./path/to/python}
+
+% ======== Fortran90 Style ======== %
+\lstdefinestyle{fortranstyle}{
+  language=[90]Fortran, basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue}\bfseries, commentstyle=\color{gray}\itshape,
+  stringstyle=\color{teal}, numbers=left, numberstyle=\tiny, frame=none,
+  breaklines=true, keepspaces=true, tabsize=2
+}
+
+% ======== Insert Fortran ======== %
+\newtcbinputlisting[auto counter, number within=noseccion]{\fcode}[2][]{
+  basicCodeStyle, listing file={#2}, listing options={style=fortranstyle}, #1
+}
+
+% ======== Example of use 
+% \fcode[codetitle={F90 code}, label=lst:fortran_example]{./path/to/fortran}
+
+% ======== Terminal Style ======== %
+\lstdefinestyle{terminalstyle}{
+  frame=none, numbers=none, showstringspaces=false, breaklines=true,
+  keepspaces=true, columns=fixed,
+}
+
+% ======== Insert Code Output ======== %
+\newtcbinputlisting[auto counter]{\codeoutput}[3][]{
+  basicCodeStyle,
+  bottom=0mm,
+  title={Salida del Código #2},
+  title after break={Salida del Código #2 (continuación)},
+  listing file={#3},
+  listing options={style=terminalstyle},
+  colback=terminalBG,
+  colupper=terminalFG,
+  overlay
+  first={
+    % Close bottom (Red)
+    \fill[btnClose] ([xshift=-15mm, yshift=-2.5mm]frame.north east) circle
+    (3pt);
+    % Minimize button (Yellow)
+    \fill[btnMin] ([xshift=-10mm, yshift=-2.5mm]frame.north east) circle (3pt);
+    % Maximize button
+    \fill[btnMax] ([xshift=-5mm, yshift=-2.5mm]frame.north east) circle (3pt);
+    \node[anchor=south east, font=\itshape\small, text=white!85] at (frame.south
+    east) {(Continúa $\rightarrow$) \,};
+  },
+  overlay
+  middle={
+    \node[anchor=south east, font=\itshape\small, text=white!85] at (frame.south
+    east) {(Continúa $\rightarrow$) \,};
+  },
+  % If the code box does not take up more than one page
+  overlay
+  unbroken={
+    % Close bottom (Red)
+    \fill[btnClose] ([xshift=-15mm, yshift=-2.5mm]frame.north east) circle
+    (3pt);
+    % Minimize button (Yellow)
+    \fill[btnMin] ([xshift=-10mm, yshift=-2.5mm]frame.north east) circle (3pt);
+    % Maximize button
+    \fill[btnMax] ([xshift=-5mm, yshift=-2.5mm]frame.north east) circle (3pt);
+  },
+  #1
+}
+
+% ======== Example of use 
+% \codeoutput[label=out:code2]{ref_for_title}{./path/to/output}
+
+% ======== "Pseudocode" Language ======== %
+\lstdefinelanguage{pseudocodigo}{
+  morekeywords={
+    Algoritmo,FinAlgoritmo, Si,FinSi,Mientras,FinMientras,
+    Para,FinPara,Entonces,Hacer, Y,O,MOD,Escribir
+  },
+  sensitive=false
+}
+
+% ======== Pseudocode Style ======== %
+\lstdefinestyle{pseudostyle}{
+  language=pseudocodigo, basicstyle=\ttfamily\small,
+  keywordstyle=\color{Psblue}\bfseries, commentstyle=\color{gray}\itshape,
+  frame=none, numbers=left, breaklines=true, keepspaces=true
+}
