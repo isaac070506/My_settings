@@ -1,9 +1,4 @@
 {
-    "usepackage": {
-        "prefix": ["\\usepackage"],
-        "body": ["\\usepackage{$1}"],
-        "description": "Add an usepackage"
-    },
     "equation": {
         "prefix": ["equation"],
         "body": [
@@ -11,7 +6,7 @@
             "\t$0",
             "\\end{equation}"
         ],
-        "description": "Equation"
+        "description": "Add a numerated equation environment"
     },
     "equation*": {
         "prefix": ["equation*"],
@@ -20,30 +15,42 @@
             "\t$0",
             "\\end{equation*}"
         ],
-        "description": "Equation*"
+        "description": "Add a non numerated equation environment"
     },
     "Align(ed)": {
         "prefix": ["align"],
-        "body": ["\\begin{align}", "\t$0", "\\end{align}"],
-        "description": "Align(ed)"
+        "body": [
+            "\\begin{align}", 
+            "\t$0", 
+            "\\end{align}"
+        ],
+        "description": "Add a numerated Align(ed) environment"
     },
     "Align*(ed)": {
         "prefix": ["align*"],
-        "body": ["\\begin{align*}", "\t$0", "\\end{align*}"],
-        "description": "Align*(ed)"
-    },
-    "Progra_biblio": {
-        "prefix": ["progra_biblio"],
-        "body": ["Chapman, S. (2017). \\textit{Fortran for Scientists and Engineers}. Mc. Graw Hill Education."],
-        "description": "To add Capman bibliography"
+        "body": [
+            "\\begin{align*}",
+            "\t$0",
+            "\\end{align*}"
+        ],
+        "description": "Add a non numerated Align(ed) environment"
     },
     "Itemize": {
-        "prefix": ["itemize", "\\itemize"],
+        "prefix": ["itemize"],
         "body": [
             "\\begin{itemize}",
             "\t\\item $0",
             "\\end{itemize}"
             ],
         "description": "To add an itemize environment"
+    },
+    "Enumerate": {
+        "prefix": ["enumerate"],
+        "body": [
+            "\\begin{enumerate}",
+            "\t \\item $0",
+            "\\end{enumerate}"
+            ],
+        "description": "description"
     }
 }

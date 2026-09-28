@@ -23,19 +23,11 @@
             },
             {
                 "language": "tex",
-                "path": "./tex/document_structure.json"
-            },
-            {
-                "language": "tex",
                 "path": "./tex/figures.json"
             },
             {
                 "language": "tex",
                 "path": "./tex/text_format.json"
-            },
-            {
-                "language": "tex",
-                "path": "./tex/references.json"
             },
             {
                 "language": "python",

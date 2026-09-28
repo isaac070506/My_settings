@@ -7,16 +7,8 @@
 
 return {
   "nvim-treesitter/nvim-treesitter",
+  branch = "main",
   version = false,
   build = ":TSUpdate",
-  config = function()
-    local ts = require("nvim-treesitter")
-    ts.install = { "python" }
-    ts.setup({
-      highlight = {
-        enable = true,
-        disable = { "latex", "tex" },
-      },
-    })
-  end
+  -- Highlighting and autoinstall parsers in /config/autocmds.lua
 }

@@ -5,6 +5,7 @@
 local o = vim.opt
 local g = vim.g
 
+
 ---=== Numbers ===---
 o.number = true
 o.relativenumber = true
@@ -38,7 +39,10 @@ g.python3_host_prog = "/usr/bin/python3"
 
 
 ---=== Deactivate spell-checking in comments ===---
-g.vimtex_syntax_nospell_comments = 1
+vim.api.nvim_create_autocmd('Syntax', {
+  pattern = '*',
+  command = 'syntax cluster Spell remove=Comment',
+})
 
 ---=== Longer indents for certain file types ===---
 local four_space_filetypes = {
@@ -68,7 +72,7 @@ o.encoding = "utf-8"
 o.clipboard:append('unnamedplus')
 
 
----=== if you use nvim on WSL ===---
+---=== If you use nvim on WSL ===---
 if vim.fn.has('wsl') == 1 then
   vim.g.clipboard = {
     name = 'win32yank-wsl',

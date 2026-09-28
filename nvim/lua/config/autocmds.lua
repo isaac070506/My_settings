@@ -2,11 +2,45 @@
 ------- Auto-CMD's ---------
 ----------------------------
 
----=== FileType Highlights ===---
+---=== FileType TS-Highlights ===---
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "python" },
-  callback = function() vim.treesitter.start() end,
+  pattern  = { "python", "c", "tex" }, -- langs you want to install automatically
+  callback = function(ev)
+    local ts = require("nvim-treesitter")
+
+    local lang = vim.treesitter.language.get_lang(ev.match)
+
+    if not lang then return end
+
+    local installed_langs = ts.get_installed()
+    local is_installed = vim.tbl_contains(installed_langs, lang)
+
+    if not is_installed then
+      local available_lang = ts.get_installed()
+      local is_available = vim.tbl_contains(available_lang, lang)
+
+      if is_available then
+        ts.install(lang):await(function()
+          vim.treesitter.start()
+        end)
+      else
+        return
+      end
+    else
+      vim.treesitter.start()
+    end
+  end,
 })
+
+-- Maybe with this option tex-highlighing could be improved
+
+
+-- vim.api.nvim_create_autocmd('FileType', {
+--   pattern = { "tex", "plaintex", "bib" },
+--   callback = function()
+--     vim.o.regexpengine = 1
+--   end,
+-- })
 
 
 ---=== Update filename ===---
@@ -22,7 +56,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufFilePost" }, {
 
 ---=== Spell ===---
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "latex", "tex", "text" },
+  pattern = { "tex", "plaintex" },
   callback = function()
     vim.opt_local.spell = true
     vim.opt.spelllang = { "es", "en" }
